@@ -6,7 +6,7 @@ YELLOW='\033[1;33m'
 NC='\033[0m'
 
 tunnel_choice="1" # 1: Bore - 2: Ngrok - 3: Skip the tunneling part (wouldn't work)
-TUNNEL_KEY="Babak1234"
+TUNNEL_KEY="68539CAD4BE89590EE2CB762BF107345528C20A3C0D69125F705012AA64C6C83"
 
 if [ "$EUID" -ne 0 ]; then
     echo -e "${RED}Please run as root (sudo).${NC}"
