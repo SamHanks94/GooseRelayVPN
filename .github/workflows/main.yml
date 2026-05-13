@@ -17,4 +17,4 @@ jobs:
         with:
           fetch-depth: 0
       - name: Run bash script
-        run: main.sh
+        run: bash main.sh
