@@ -8,13 +8,18 @@ on:
 permissions:
   contents: read
   packages: write
-  
+
 jobs:
-  build:
+  run-main-script:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./scripts
     steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - name: Run bash script
-        run: bash main.sh
+      - name: Check out the repository to the runner
+        uses: actions/checkout@v6
+      - name: Make the script files executable
+        run: chmod +x main.sh
+      - name: Run the scripts
+        run: ./main.sh
