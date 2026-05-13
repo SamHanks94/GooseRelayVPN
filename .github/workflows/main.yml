@@ -23,4 +23,4 @@ jobs:
       - name: Make the script files executable
         run: chmod +x main.sh
       - name: Run the scripts
-        run: ./main.sh
+        run: sudo ./main.sh
