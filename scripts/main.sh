@@ -14,16 +14,17 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 # Get latest version
-echo -e "${GREEN}Fetching latest GooseRelayVPN release...${NC}"
-LATEST_VERSION=$(curl -s https://api.github.com/repos/kianmhz/GooseRelayVPN/releases/latest | grep '"tag_name"' | cut -d '"' -f4)
-if [ -z "$LATEST_VERSION" ]; then
-    echo -e "${RED}Failed to fetch latest version.${NC}"
-    exit 1
-fi
-echo -e "Latest version: ${LATEST_VERSION}"
+# echo -e "${GREEN}Fetching latest GooseRelayVPN release...${NC}"
+# LATEST_VERSION=$(curl -s https://api.github.com/repos/kianmhz/GooseRelayVPN/releases/latest | grep '"tag_name"' | cut -d '"' -f4)
+# if [ -z "$LATEST_VERSION" ]; then
+#     echo -e "${RED}Failed to fetch latest version.${NC}"
+#     exit 1
+# fi
+# echo -e "Latest version: ${LATEST_VERSION}"
 
 # Download
 ARCH="linux-amd64"
+LATEST_VERSION="v1.6.0"
 DOWNLOAD_URL="https://github.com/kianmhz/GooseRelayVPN/releases/download/${LATEST_VERSION}/GooseRelayVPN-server-${LATEST_VERSION}-${ARCH}.tar.gz"
 TEMP_DIR=$(mktemp -d)
 cd "$TEMP_DIR"
